@@ -38,8 +38,12 @@ class onlinenet:
 		ddos_info = api.ddos.info.get({ 'alert_id': ddosid })
 		return ddos_info
 
-	def d2dos(self, apikey):
+	def list_servers(self, apikey):
 		api = self.start(apikey)
-		ddos_list1 = api.ddos1.get()
-		return ddos_list1
+		server_list = api.server.get()
+		return server_list
 
+	def server_info(self, serverid, apikey):
+		api = seft.start(apikey)
+		server_info = api.server.get({ 'server_id': serverid})
+		return server_info
